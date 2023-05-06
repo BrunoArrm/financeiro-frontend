@@ -1,0 +1,9 @@
+@import '../../App.scss';
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 90vh;
+    padding: 5px;
+}

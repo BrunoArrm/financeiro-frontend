@@ -1,0 +1,23 @@
+@import '../../App.scss';
+@import '../../styles/Animations.scss';
+
+.listHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $main-color;
+    font-weight: bold;
+    color: $main-color;
+    background-color: $nd-color;
+
+    .listField {
+        // border-right: 2px solid black;
+        // border-left: 2px solid black;
+        text-align: center;
+    }
+
+    .pago {
+        border-right: none;
+    }
+
+}

@@ -1,0 +1,55 @@
+.mainPage-listField {
+    width: 100%;
+
+    .listField {
+        flex: 1;
+    }
+
+    .agrupamento {
+        min-width: 30px;
+        flex: 0 0 1%;
+    }
+
+    .valor,
+    .pago {
+        min-width: 70px;
+        flex: 0 0 2%;
+    }
+
+    .vencimento,
+    .data-baixa {
+        min-width: 130px;
+        flex: 0 0 2%;
+    }
+
+    .contato,
+    .descricao {
+        min-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .grupo,
+    .subgrupo {
+        min-width: 110px;
+        flex: 0 0 2%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .parcelas,
+    .total-parcelas {
+        min-width: 30px;
+        flex: 0 0 2%;
+    }
+    
+    .liquidado,
+    .atencao,
+    .aguardando {
+        height: 100%;
+        flex: 0 0 30px;
+    }
+
+}

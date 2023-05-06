@@ -1,0 +1,37 @@
+@import '../../App.scss';
+@import '../../styles/Animations.scss';
+
+.listRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $main-color;
+    border-bottom: 1px dotted $main-color;
+
+    .listField {
+        // border-right: 1px dotted black;
+        // border-left: 1px dotted black;
+        text-align: center;
+        height: 100%;
+    }
+
+    .pago {
+        border-right: none;
+    }
+    
+}
+
+.liquidado{
+    background-image: url('../../assets/icons/liquidado.png');
+    @extend .bg-default-config;
+}
+
+.atencao {
+    background-image: url('../../assets/icons/attention.png');
+    @extend .bg-default-config;
+}
+
+.aguardando {
+    background-image: url('../../assets/icons/waiting.png');
+    @extend .bg-default-config;
+}

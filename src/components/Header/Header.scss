@@ -1,0 +1,32 @@
+@import '../../App.scss';
+@import '../../styles/Animations.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: $main-color;
+
+    .btn-header {
+        width: 100px;
+        height: 60%;
+        margin: 10px;
+        @extend .icon-default-config;
+        transition: 0.2s;
+
+        &:hover {
+            @extend .btn-Hover
+        }
+    }
+    
+    .header-add {
+        background-image: url('../../assets/icons/add.png');
+    }
+    
+    .header-filter {
+        background-image: url('../../assets/icons/filter.png');
+    }
+
+}

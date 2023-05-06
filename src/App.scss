@@ -1,0 +1,22 @@
+// Cores globais
+$main-color: #000034;
+$nd-color: #bec2da;
+
+// Configuração padrão para imagens
+.icon-default-config {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bg-default-config {
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

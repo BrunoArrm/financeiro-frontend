@@ -4,6 +4,7 @@ import '../../styles/MainListDimensions.scss';
 const ListHeader = () => {
   return (
     <div className='mainPage-listField listHeader'>
+
         <div className={`listField agrupamento`}>       ID</div>
         <div className={`listField valor`}>             VALOR</div>
         <div className={`listField vencimento`}>        VENCIMENTO</div>
@@ -15,7 +16,8 @@ const ListHeader = () => {
         <div className={`listField total-parcelas`}>    TP</div>
         <div className={`listField data-baixa`}>        BAIXA</div>
         <div className={`listField pago`}>              PAGO</div>
-        <div className={`listField acoes`}></div>
+        <div className={`listField status`}></div>
+
     </div>
   );
 }

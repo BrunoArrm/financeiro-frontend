@@ -2,7 +2,7 @@ interface ListRowProps {
     agrupamento: number;
     nDoc?: string | null;
     valor?: number | null;
-    vencimento?: string | null;
+    vencimento?: Date | null;
     contato?: string | null;
     descricao?: string | null;
     grupo?: string | null;
@@ -10,7 +10,7 @@ interface ListRowProps {
     parcelas?: number | null;
     tParcelas?: number | null;
     tipo?: string | null;
-    dBaixa?: string | null;
+    dBaixa?: Date | null;
     pago?: number | null;
 }
 

@@ -6,32 +6,62 @@
     align-items: center;
     justify-content: center;
     color: $main-color;
-    border-bottom: 1px dotted $main-color;
+    border-bottom: 1px solid $main-color;
+
+    &:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
 
     .listField {
         // border-right: 1px dotted black;
         // border-left: 1px dotted black;
         text-align: center;
         height: 100%;
+
+        &:last-child {
+            border-right: 1px solid $main-color;
+        }
+
+        &:first-child {
+            border-left: 1px solid $main-color;
+        }
+
+    }
+
+    .valor {
+        text-align: right;
     }
 
     .pago {
         border-right: none;
+        text-align: right;
     }
     
 }
 
-.liquidado{
+// Ícone para título liquidado
+.liquidado {
     background-image: url('../../assets/icons/liquidado.png');
     @extend .bg-default-config;
 }
 
+.corLiquidado {
+    color: green;
+}
+
+// Ícone para título vencido
 .atencao {
-    background-image: url('../../assets/icons/attention.png');
+    background-image: url('../../assets/icons/atencao.png');
     @extend .bg-default-config;
 }
 
+.corAtencao {
+    color: red;
+}
+
+// Ícone para título aberto
 .aguardando {
-    background-image: url('../../assets/icons/waiting.png');
+    background-image: url('../../assets/icons/aguardando.png');
     @extend .bg-default-config;
 }

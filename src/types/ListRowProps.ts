@@ -1,13 +1,15 @@
 interface ListRowProps {
+    id: number,
     agrupamento: number;
     nDoc?: string | null;
+    contato?: string | null;
+    responsavel?: string | null;
     valor?: number | null;
     vencimento?: Date | null;
-    contato?: string | null;
     descricao?: string | null;
     grupo?: string | null;
-    subGrupo?: string | null;
-    parcelas?: number | null;
+    subgrupo?: string | null;
+    parcela?: number | null;
     tParcelas?: number | null;
     tipo?: string | null;
     dBaixa?: Date | null;

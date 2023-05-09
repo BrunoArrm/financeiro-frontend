@@ -11,7 +11,7 @@ interface ListRowProps {
     subgrupo?: string | null;
     parcela?: number | null;
     tParcelas?: number | null;
-    tipo?: string | null;
+    tipo?: string;
     dBaixa?: Date | null;
     pago?: number | null;
 }

@@ -131,7 +131,7 @@ export const dados = [
         subgrupo: "Subgrupo B",
         parcela: 8,
         tParcelas: 12,
-        tipo: "D",
+        tipo: "C",
         dBaixa: null,
         pago: null
       },

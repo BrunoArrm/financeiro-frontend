@@ -1,0 +1,100 @@
+@import '../../App.scss';
+@import '../../styles/Animations.scss';
+
+.analiticListField {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed black;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.281);
+    }
+
+    .analitic-icon {
+        position: absolute;
+        top: -6px;
+        left: -6px;
+    }
+
+    .icon-debito {
+        background-image: url('../../assets/icons/mais.png');
+        @extend .bg-default-config;
+        position: absolute;
+        bottom: -6px;
+        left: -6px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .icon-credito {
+        background-image: url('../../assets/icons/menos.png');
+        @extend .bg-default-config;
+        position: absolute;
+        bottom: -6px;
+        left: -6px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .titulo-dados {
+        width: 70%;
+        height: 100%;
+
+        .dados-header {
+            padding-left: 10%;
+            span {
+                margin-left: 15px;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+        }
+
+        .dados-container {
+            display: flex;
+
+            .container-valor {
+                width: 50%;
+                height: 100%;
+                padding: 3px 3px 3px 20px;
+            }
+
+            .container-baixa {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                height: 100%;
+                padding: 3px 3px 3px 20px;
+            }
+
+        }
+
+        .dados-footer {
+            padding: 3px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .agrupamentoID {
+                width: 15%;
+                text-align: right;
+            }
+
+            .responsavel {
+                text-align: right;
+                width: 85%;
+            }
+        }
+
+    }
+
+    .titulo-descricao {
+        width: 30%;
+        height: 100%;
+    }
+
+}

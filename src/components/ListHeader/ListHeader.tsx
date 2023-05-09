@@ -1,9 +1,14 @@
 import './ListHeader.scss';
 import '../../styles/MainListDimensions.scss';
+import { ListStyleContext } from '../../context/ListStyleContext';
+import { useContext } from 'react';
 
 const ListHeader = () => {
+
+  const { listStyle } = useContext(ListStyleContext);
+
   return (
-    <div className='mainPage-listField listHeader'>
+    <div className={`mainPage-listField listHeader listHeader-${listStyle}`}>
 
         <div className={`listField agrupamento`}>       ID</div>
         <div className={`listField valor`}>             VALOR</div>

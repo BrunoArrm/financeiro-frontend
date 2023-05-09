@@ -4,11 +4,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { ListStyleProvider } from './context/ListStyleContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <ListStyleProvider>
+      <Router>
+        <App />
+      </Router>
+    </ListStyleProvider>
   </React.StrictMode>,
 )

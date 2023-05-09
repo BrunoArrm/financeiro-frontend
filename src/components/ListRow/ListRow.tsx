@@ -3,14 +3,15 @@ import './ListRowAnalitic.scss';
 import '../../styles/MainListDimensions.scss';
 import ListRowProps from '../../types/ListRowProps';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ListStyleContext } from '../../context/ListStyleContext';
 
 const ListRow = ({  
                     id, agrupamento, valor, vencimento, contato, responsavel, descricao, grupo, subgrupo,
                     parcela, tParcelas, tipo, dBaixa, pago
                 }: ListRowProps) => {
   
-  const [listStyle, setListStyle] = useState("analitico")
+  const { listStyle } = useContext(ListStyleContext);
   const navigate = useNavigate();
   
   // Aplica a classe adequada para estilização de acordo com o status

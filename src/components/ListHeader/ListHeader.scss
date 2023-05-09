@@ -1,8 +1,15 @@
 @import '../../App.scss';
 @import '../../styles/Animations.scss';
 
-.listHeader {
+.listHeader-simples {
+    display: flex;
+}
+
+.listHeader-analitico {
     display: none;
+}
+
+.listHeader {
     align-items: center;
     justify-content: center;
     border: 2px solid $main-color;

@@ -29,4 +29,14 @@
         background-image: url('../../assets/icons/filter.png');
     }
 
+    .listStyle-simples {
+        background-image: url('../../assets/icons/lista-analitica.png');
+        @extend .bg-default-config;
+    }
+
+    .listStyle-analitico {
+        background-image: url('../../assets/icons/lista-simples.png');
+        @extend .bg-default-config;
+    }
+
 }

@@ -13,6 +13,7 @@
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.281);
+        cursor: pointer;
     }
 
     .analitic-icon {
@@ -58,6 +59,7 @@
             display: flex;
 
             .container-valor {
+                text-align: center;
                 width: 50%;
                 height: 100%;
                 padding: 3px 3px 3px 20px;

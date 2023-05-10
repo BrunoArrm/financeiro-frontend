@@ -1,13 +1,6 @@
 import { createContext, useState } from 'react';
-
-interface ListStyleContextProps {
-  children: React.ReactNode;
-}
-
-type ListStyleContextType = {
-  listStyle: string;
-  setListStyle: React.Dispatch<React.SetStateAction<string>>;
-};
+import ListStyleContextProps from '../types/ListStyleContextProps';
+import ListStyleContextType from '../types/ListStyleContextType';
 
 export const ListStyleContext = createContext<ListStyleContextType | undefined>(undefined);
 

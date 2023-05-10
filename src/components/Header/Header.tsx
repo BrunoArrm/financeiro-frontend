@@ -4,11 +4,18 @@ import { ListStyleContext } from '../../context/ListStyleContext';
 
 const Header = () => {
 
-  const { listStyle, setListStyle } = useContext(ListStyleContext);
+  const listStyleContextValue = useContext(ListStyleContext);
+  let listStyle: string | undefined;
+  let setListStyle: ((value: string) => void) | undefined;
+  if (listStyleContextValue) {
+    ({ listStyle, setListStyle } = listStyleContextValue);
+  }
 
   const handleChangeListStyle = () => {
-    listStyle === "simples" ? setListStyle("analitico") : setListStyle("simples");
-    console.log("Alterou o tipo de lista para: ", listStyle);
+    if (setListStyle) {
+      listStyle === "simples" ? setListStyle("analitico") : setListStyle("simples");
+      console.log("Alterou o tipo de lista para: ", listStyle);
+    }
   }
 
   return (
@@ -23,4 +30,3 @@ const Header = () => {
 }
 
 export default Header;
-

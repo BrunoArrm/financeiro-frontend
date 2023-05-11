@@ -3,5 +3,53 @@
 
 .titulo {
     display: flex;
+    margin: 10px;
+    padding: 10px;
+    background-color: $main-color;
+    border-radius: $border;
     flex-direction: column;
+    gap: 10px;
+
+    legend {
+        font-weight: bold;
+        margin: 3px;
+        text-align: center;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: $border;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .campo-agrupamento {
+        grid-column: 1 / span 3;
+    }
+
+    .campo-pequeno {
+        grid-column: span 1;
+    }
+
+    .campo-grande {
+        grid-column: 1 / span 3;
+    }
+
+    .rodape {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
 }

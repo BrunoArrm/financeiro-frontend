@@ -1,6 +1,11 @@
 // Cores globais
-$main-color: #000034;
-$nd-color: #bec2da;
+$main-color: #C3E0F4;
+$nd-color: #456F8C;
+$main-font-color: #2E485E;
+
+// Arredondamento padrão para bordas
+$border: 10px;
+
 
 // Configuração padrão para imagens
 .icon-default-config {
@@ -20,4 +25,8 @@ $nd-color: #bec2da;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: $main-font-color;
 }

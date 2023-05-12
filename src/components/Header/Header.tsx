@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 import { ListStyleContext } from '../../context/ListStyleContext';
 
@@ -18,10 +19,15 @@ const Header = () => {
     }
   }
 
+  const handleOpenNewTitle = () => {
+    const url = '/novoTitulo/';
+    window.open(url, '_blank');
+  }
+
   return (
     <header className='header'>
       <div className='btn-header header-filter' />
-      <div className='btn-header header-add' />
+      <div className='btn-header header-add' onClick={() => handleOpenNewTitle()} />
       <div className={`btn-header listStyle-${listStyle}`}
             onClick={() => handleChangeListStyle()}
       />

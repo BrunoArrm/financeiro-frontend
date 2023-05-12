@@ -32,6 +32,7 @@ const ListRow = ({
     tituloColorStatus = "corAguardando"
   }
 
+  // Abre o título clicado em uma nova guia
   const handleOpenTitle = () => {
     const url = '/titulo/' + id;
     window.open(url, '_blank');

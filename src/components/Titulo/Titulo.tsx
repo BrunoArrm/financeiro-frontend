@@ -185,6 +185,10 @@ const Titulo = () => {
         <p>{tipoValue}</p>
         <p>Parcelas: {parcela} / {tParcelas}</p>
         <div className='campo-agrupamento'>ID Agrupadora {titulo.agrupamento}</div>
+        <button>
+          <div/>
+          Salvar
+        </button>
       </div>
     </fieldset>
 

@@ -4,75 +4,69 @@ import './Titulo.scss';
 import { useState } from 'react';
 
 const Titulo = () => {
-  const { id } = useParams();
-  const titulo = dados.find(item => item.id === Number(id));
+  const { id } = useParams(); // Recebe o ID do título para buscar os dados
 
+  //Declaração das variáveis de estado dos campos
+  const titulo = dados.find(item => item.id === Number(id));
   const parcela = titulo?.parcela;
   const tParcelas = titulo?.tParcelas;
-
-  const [nDocValue, setNDocValue] = useState(titulo?.nDoc);
+  const [nDocValue, setNDocValue] = useState(titulo?.nDoc ?? '');
   const [contatoValue, setContatoValue] = useState(titulo?.contato);
   const [responsavelValue, setResponsavelValue] = useState(titulo?.responsavel);
   const valor = titulo?.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })
   const [valorValue, setValorValue] = useState(valor);
-  let vencimento;
+  const [descricaoValue, setDescricaoValue] = useState(titulo?.descricao);
+  const [grupoValue, setGrupoValue] = useState(titulo?.grupo);
+  const [subgrupoValue, setSubgrupoValue] = useState(titulo?.subgrupo);
+  const tipoValue = titulo?.tipo === "D" ? "Débito" : "Crédito";
+  const valorPago = titulo?.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })
+  const [vPago, setVPago] = useState(valorPago);
+
+  // Converte a string recebida para o formato de DATA PTBR caso ela não seja nula
+  let vencimento; // Trata a data de vencimento
   if (titulo?.vencimento) {
     vencimento = new Date(titulo?.vencimento).toLocaleDateString("pt-BR");
   } else {
     vencimento = null
   }
-  const [vencimentoValue, setVencimentoValue] = useState(vencimento);
-  const [descricaoValue, setDescricaoValue] = useState(titulo?.descricao);
-  const [grupoValue, setGrupoValue] = useState(titulo?.grupo);
-  const [subgrupoValue, setSubgrupoValue] = useState(titulo?.subgrupo);
-  const tipoValue = titulo?.tipo === "D" ? "Débito" : "Crédito";
-  let dataBaixa;
+  const [vencimentoValue, setVencimentoValue] = useState(vencimento ?? "");
+  let dataBaixa; // Trata a data de baixa
   if (titulo?.dBaixa) {
     dataBaixa = new Date(titulo?.dBaixa).toLocaleDateString("pt-BR");
   } else {
     dataBaixa = null
   }
-  const [dBaixa, setDBaixa] = useState(dataBaixa);
-  const valorPago = titulo?.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })
-  const [vPago, setVPago] = useState(valorPago);
+  const [dBaixa, setDBaixa] = useState(dataBaixa ?? '');
 
-  const handleNDocChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Modificadores de estado nos campos que podem ter os dados alterados
+  const handleNDocChange = (e: React.ChangeEvent<HTMLInputElement>) => { // NÚMERO DO DOCUMENTO
     setNDocValue(e?.target.value)
   }
-
-  const handleContatoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleContatoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // NOME DO CONTATO
     setContatoValue(e?.target.value);
   }
-
-  const handleResponsavelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleResponsavelChange = (e: React.ChangeEvent<HTMLInputElement>) => { // NOME DO RESPONSÁVEL
     setResponsavelValue(e?.target.value);
   }
-
-  const handleValorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleValorChange = (e: React.ChangeEvent<HTMLInputElement>) => { // VALOR
     setValorValue(e?.target.value);
   }
-
-  const handleVencimentoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVencimentoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // DATA DE VENCIMENTO
     setVencimentoValue(e?.target.value);
   }
-
-  const handleDescricaoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDescricaoChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { // DESCRIÇÃO
     setDescricaoValue(e?.target.value);
   }
-
-  const handleGrupoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleGrupoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // GRUPO
     setGrupoValue(e?.target.value);
   }
-
-  const handleSubgrupoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubgrupoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // SUBGRUPO
     setSubgrupoValue(e?.target.value);
   }
-
-  const handleDBaixaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDBaixaChange = (e: React.ChangeEvent<HTMLInputElement>) => { // DATA DE BAIXA
     setDBaixa(e?.target.value);
   }
-
-  const handleVPagoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVPagoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // VALOR PAGO
     setVPago(e?.target.value);
   }
 

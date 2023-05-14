@@ -1,7 +1,7 @@
 @import '../../App.scss';
 @import '../../styles/Animations.scss';
 
-.titulo {
+.novoTitulo {
     display: flex;
     margin: 10px 10%;
     padding: 10px;
@@ -34,6 +34,18 @@
         gap: 10px;
     }
 
+    .seletores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .seletor{
+            display: flex;
+        }
+        
+    }
+
     .campo-agrupamento {
         grid-column: 1 / span 3;
     }
@@ -49,7 +61,7 @@
     .rodape {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         margin-top: 10px;
 
         button {

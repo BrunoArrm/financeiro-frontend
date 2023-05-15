@@ -24,7 +24,7 @@ const ListRow = ({
   if (pago !== null) {
     tituloIconeStatus = "liquidado";
     tituloColorStatus = "corLiquidado"
-  } else if (pago === null && vencimento !== undefined && vencimento !== null && vencimento < new Date()) {
+  } else if (pago === null && vencimento !== undefined && vencimento !== null && new Date(vencimento) < new Date()) {
     tituloIconeStatus = "atencao";
     tituloColorStatus = "corAtencao"
   } else {
@@ -48,14 +48,14 @@ const ListRow = ({
 
         <div className={`listField agrupamento`}>       {agrupamento ? agrupamento : "-"}</div>
         <div className={`listField valor`}>             {valor ? valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 }) : "."}</div>
-        <div className={`listField vencimento`}>        {vencimento ? vencimento.toLocaleDateString() : ""}</div>
+        <div className={`listField vencimento`}>        {vencimento ? new Date(vencimento).toLocaleDateString() : ""}</div>
         <div className={`listField contato`}>           {contato ? contato : "."}</div>
         <div className={`listField descricao`}>         {descricao ? descricao : "."}</div>
         <div className={`listField grupo`}>             {grupo ? grupo : "."}</div>
         <div className={`listField subgrupo`}>          {subgrupo ? subgrupo : "."}</div>
         <div className={`listField parcelas`}>          {parcela ? parcela : "."}</div>
         <div className={`listField total-parcelas`}>    {tParcelas ? tParcelas : "."}</div>
-        <div className={`listField data-baixa`}>        {dBaixa ? dBaixa.toLocaleDateString() : "."}</div>
+        <div className={`listField data-baixa`}>        {dBaixa ? new Date(dBaixa).toLocaleDateString() : "."}</div>
         <div className={`listField pago`}>              {pago ? pago.toLocaleString("pt-BR", { minimumFractionDigits: 2 }) : "."}</div>
         <div className={`listField ${tituloIconeStatus}`}>.</div>
 
@@ -74,7 +74,7 @@ const ListRow = ({
         <div className='titulo-dados'>
 
           <div className='dados-header'>
-            {vencimento ? vencimento.toLocaleDateString() : ""}
+            {vencimento ? new Date(vencimento).toLocaleDateString() : ""}
             <span>{contato ? contato : "."}</span>
           </div>
 
@@ -83,7 +83,7 @@ const ListRow = ({
               Valor: {valor ? valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 }) : ""}
             </div>
             <div className='container-baixa'>
-              <p>Data de baixa: {dBaixa ? dBaixa.toLocaleDateString() : ""}</p>
+              <p>Data de baixa: {dBaixa ? new Date(dBaixa).toLocaleDateString() : ""}</p>
               <p>Valor pago: {pago ? pago.toLocaleString("pt-BR", { minimumFractionDigits: 2 }) : ""}</p>
             </div>
           </div>

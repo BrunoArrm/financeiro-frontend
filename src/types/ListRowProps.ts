@@ -5,14 +5,14 @@ interface ListRowProps {
     contato?: string | null;
     responsavel?: string | null;
     valor?: number | null;
-    vencimento?: Date | null;
+    vencimento?: string | null;
     descricao?: string | null;
     grupo?: string | null;
     subgrupo?: string | null;
     parcela?: number | null;
     tParcelas?: number | null;
     tipo?: string;
-    dBaixa?: Date | null;
+    dBaixa?: string | null;
     pago?: number | null;
 }
 

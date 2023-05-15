@@ -1,14 +1,30 @@
 import ListHeader from '../../components/ListHeader/ListHeader';
 import ListRow from '../../components/ListRow/ListRow';
 import './MainPage.scss';
-import { dados } from '../../assets/helpers/Dados';
+import { GET } from '../../api/Api';
+import { useEffect, useState } from 'react';
 
 const MainPage = () => {
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await GET();
+        setDados(data);
+        console.log(dados)
+      } catch (error) {
+        console.log('Erro ao obter os dados:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main className='mainPage'>
-      <ListHeader />
+      {/* <ListHeader />
       {dados.map((item, index) => (
-
         <ListRow
           key={index}
           id={item.id}
@@ -26,8 +42,7 @@ const MainPage = () => {
           dBaixa={item.dBaixa !== null ? new Date(item.dBaixa) : null}
           pago={item.pago}
         />
-
-      ))}
+      ))} */}
     </main>
   );
 }

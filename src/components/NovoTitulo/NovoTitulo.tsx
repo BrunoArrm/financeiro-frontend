@@ -1,4 +1,4 @@
-import { POST_TITLE } from '../../api/Api';
+import { GET_ALL, POST_TITLE } from '../../api/Api';
 import './NovoTitulo.scss';
 import { useState } from 'react';
 
@@ -38,7 +38,7 @@ const NovoTitulo = () => {
     setValorValue(e?.target.value);
   }
   const handleVencimentoChange = (e: React.ChangeEvent<HTMLInputElement>) => { // DATA DE VENCIMENTO
-    setVencimentoValue(e?.target.value);
+    setVencimentoValue(e?.target.value + 1);
   }
   const handleDescricaoChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { // DESCRIÇÃO
     setDescricaoValue(e?.target.value);
@@ -63,16 +63,16 @@ const NovoTitulo = () => {
 
     const titleData = {
       "id": 144,
-      "nDoc": "15teste",
+      "nDoc": nDocValue,
       "agrupamento": 2,
-      "valor": 1000.0,
-      "vencimento": "2023-05-15T15:30:00.000Z",
-      "contato": "fasfasdada",
-      "responsavel": "Susanna",
-      "desricao": "Teste de drédito",
-      "grupo": null,
+      "valor": parseFloat(valorValue),
+      "vencimento": vencimentoValue,
+      "contato": contatoValue,
+      "responsavel": responsavelValue,
+      "desricao": descricaoValue,
+      "grupo": grupoValue,
       "subgrupo": null,
-      "parcela": 1,
+      "parcela": parcelaValue,
       "tParcelas": 1,
       "tipo": tipoValue,
       "dBaixa": null,
@@ -141,7 +141,7 @@ const NovoTitulo = () => {
         <div className='campo-pequeno'>
           <label htmlFor='vencimento'>Data de vencimento</label>
           <input
-            type='text'
+            type='date'
             value={vencimentoValue}
             id='vencimento'
             onChange={handleVencimentoChange}

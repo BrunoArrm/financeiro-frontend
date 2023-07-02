@@ -71,7 +71,7 @@ const NovoTitulo = () => {
       "responsavel": responsavelValue,
       "desricao": descricaoValue,
       "grupo": grupoValue,
-      "subgrupo": null,
+      "subgrupo": subgrupoValue,
       "parcela": parcelaValue,
       "tParcelas": 1,
       "tipo": tipoValue,

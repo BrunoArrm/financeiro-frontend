@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ListHeader from '../../components/ListHeader/ListHeader';
 import ListRow from '../../components/ListRow/ListRow';
 import ListRowProps from '../../types/ListRowProps';
-import { GET } from '../../api/Api';
+import { GET_ALL } from '../../api/Api';
 import './MainPage.scss';
 
 const MainPage = () => {
@@ -11,7 +11,7 @@ const MainPage = () => {
   useEffect(() => { // Componente busca os títulos ao carregar.
     const fetchData = async () => {
       try {
-        const data = await GET();
+        const data = await GET_ALL();
         setDados(data);
         console.log("dados recebidos ", dados);
       } catch (error) {

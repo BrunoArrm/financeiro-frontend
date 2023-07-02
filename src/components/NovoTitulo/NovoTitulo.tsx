@@ -1,10 +1,11 @@
+import { POST_TITLE } from '../../api/Api';
 import './NovoTitulo.scss';
 import { useState } from 'react';
 
 const NovoTitulo = () => {
 
   //Declaração das variáveis de estado dos campos
-  const [parcelaValue, setParcelaValue] = useState("");
+  const [parcelaValue, setParcelaValue] = useState(1);
   const [tParcelasValue, setTParcelasValue] = useState("");
   const [nDocValue, setNDocValue] = useState("");
   const [contatoValue, setContatoValue] = useState("");
@@ -13,12 +14,17 @@ const NovoTitulo = () => {
   const [descricaoValue, setDescricaoValue] = useState("");
   const [grupoValue, setGrupoValue] = useState("");
   const [subgrupoValue, setSubgrupoValue] = useState("");
-  const [tipoValue, setTipoValue] = useState("");
+  const [tipoValue, setTipoValue] = useState("D");
   const [vPago, setVPago] = useState("");
   const [vencimentoValue, setVencimentoValue] = useState("");
   const [dBaixa, setDBaixa] = useState("");
 
   // Modificadores de estado nos campos que podem ter os dados alterados
+  const handleTipoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTipoValue(e.target.value);
+    console.log(tipoValue);
+  };
+
   const handleNDocChange = (e: React.ChangeEvent<HTMLInputElement>) => { // NÚMERO DO DOCUMENTO
     setNDocValue(e?.target.value)
   }
@@ -53,6 +59,29 @@ const NovoTitulo = () => {
     setTParcelasValue(e?.target.value);
   }
 
+  const handleSaveButtonClick = () => {
+
+    const titleData = {
+      "id": 144,
+      "nDoc": "15teste",
+      "agrupamento": 2,
+      "valor": 1000.0,
+      "vencimento": "2023-05-15T15:30:00.000Z",
+      "contato": "fasfasdada",
+      "responsavel": "Susanna",
+      "desricao": "Teste de drédito",
+      "grupo": null,
+      "subgrupo": null,
+      "parcela": 1,
+      "tParcelas": 1,
+      "tipo": tipoValue,
+      "dBaixa": null,
+      "pago": null
+    };
+
+    POST_TITLE(titleData);
+  };
+
   return (
     <fieldset className='novoTitulo'>
       <legend> Novo título </legend>
@@ -60,11 +89,11 @@ const NovoTitulo = () => {
 
         <div className='seletores'>
           <div className='seletor'>
-            <input type="radio" id="debito" name="tipo" value="debito" checked />
+            <input type="radio" id="debito" name="tipo" value="D" checked={tipoValue === "D"} onChange={handleTipoChange} />
             <label htmlFor="debito">Débito</label>
           </div>
           <div className='seletor'>
-            <input type="radio" id="credito" name="tipo" value="credito" />
+            <input type="radio" id="credito" name="tipo" value="C" checked={tipoValue === "C"} onChange={handleTipoChange} />
             <label htmlFor="credito">Crédito</label>
           </div>
         </div>
@@ -180,7 +209,7 @@ const NovoTitulo = () => {
         </div>
 
         <div className='rodape'>
-          <button>
+          <button onClick={handleSaveButtonClick}>
             <div />
             Salvar
           </button>

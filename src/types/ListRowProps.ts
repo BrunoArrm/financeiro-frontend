@@ -1,6 +1,6 @@
 interface ListRowProps {
-    id: number,
-    agrupamento: number;
+    id: number | null,
+    agrupamento: number | null;
     nDoc?: string | null;
     contato?: string | null;
     responsavel?: string | null;
@@ -16,4 +16,4 @@ interface ListRowProps {
     pago?: number | null;
 }
 
-export default ListRowProps;
+export default ListRowProps;    

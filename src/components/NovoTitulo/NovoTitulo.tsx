@@ -73,10 +73,10 @@ const NovoTitulo = () => {
       "grupo": grupoValue,
       "subgrupo": subgrupoValue,
       "parcela": parcelaValue,
-      "tParcelas": 1,
+      "tParcelas": parseInt(tParcelasValue),
       "tipo": tipoValue,
-      "dBaixa": null,
-      "pago": null
+      "dBaixa": dBaixa,
+      "pago": parseFloat(vPago)
     };
 
     POST_TITLE(titleData);
@@ -181,7 +181,7 @@ const NovoTitulo = () => {
         <div className='campo-pequeno'>
           <label htmlFor='dBaixa'>Data de baixa</label>
           <input
-            type='text'
+            type='date'
             value={dBaixa}
             id='dBaixa'
             onChange={handleDBaixaChange}
